@@ -1,1 +1,1 @@
-# mihomo-starter
+clean

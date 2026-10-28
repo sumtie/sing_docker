@@ -1,1 +1,0 @@
-sudo ./mihomo -d .
