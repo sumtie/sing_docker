@@ -1,0 +1,43 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "inbounds": [
+    {
+      "type": "vless",
+      "tag": "vless-ws",
+      "listen": "0.0.0.0",
+      "listen_port": 8001,
+      "tcp_fast_open": true,
+      "users": [
+        { "name": "vless", "uuid": "__UUID__", "flow": "" }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "vmess-ws",
+      "listen": "0.0.0.0",
+      "listen_port": 8002,
+      "tcp_fast_open": true,
+      "users": [
+        { "name": "vmess", "uuid": "__UUID__", "alterId": 0, "security": "auto" }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vmess-ws",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    }
+  ],
+  "outbounds": [
+    { "type": "direct", "tag": "direct" }
+  ]
+}
