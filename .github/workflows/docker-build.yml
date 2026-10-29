@@ -1,11 +1,9 @@
 name: Build and Push Image
 
 on:
-  push:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
   workflow_dispatch:
-  schedule:
-    - cron: '0 4 * * 0'   # 每周日重建一次，顺带拉最新 cloudflared
 
 env:
   REGISTRY: ghcr.io
